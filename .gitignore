@@ -1,6 +1,7 @@
 
 .gradle/
 .idea/compiler.xml
+.idestatusa/compiler.xml
 .idea/copyright/
 .idea/gradle.xml
 .idea/libraries/
