@@ -1,4 +1,4 @@
-package com.example.Sample;
+package com.example.sample;
 
 public class Sample {
     private String sentence;

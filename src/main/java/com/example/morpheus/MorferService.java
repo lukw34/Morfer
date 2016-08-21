@@ -1,6 +1,6 @@
 package com.example.morpheus;
 
-import com.example.Result.Result;
+import com.example.result.Result;
 
 public interface MorferService {
     Result findById(Long id);

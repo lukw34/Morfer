@@ -1,4 +1,4 @@
-package com.example.Result;
+package com.example.result;
 
 
 public interface PartOfSpeech {

@@ -1,6 +1,7 @@
-package com.example.Result;
+package com.example.result;
 
-import com.example.Sample.Sample;
+import com.example.morpheus.Morpheus;
+import com.example.sample.Sample;
 import com.example.morpheus.MorferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pl.sgjp.morfeusz.ResultsIterator;
+import pl.sgjp.morfeusz.app.MorfeuszUtils;
 
 @RestController
 @RequestMapping("/morfer")
@@ -18,9 +21,10 @@ public class ResultController {
     MorferService morferService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Sample> sendSample(@RequestBody Sample sample) {
-        System.out.println(sample.getSentence());
-        return new ResponseEntity<>(sample, HttpStatus.OK);
+    public ResponseEntity<Result> sendSample(@RequestBody Sample sample) {
+        Result result = new Result(sample);
+        morferService.saveResult(result);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }

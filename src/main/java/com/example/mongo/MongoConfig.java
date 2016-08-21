@@ -1,4 +1,4 @@
-package com.example.Mongo;
+package com.example.mongo;
 
 import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;

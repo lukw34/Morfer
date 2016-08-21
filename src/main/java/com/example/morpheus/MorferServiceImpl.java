@@ -1,7 +1,7 @@
 package com.example.morpheus;
 
-import com.example.Mongo.MongoConfig;
-import com.example.Result.Result;
+import com.example.mongo.MongoConfig;
+import com.example.result.Result;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;

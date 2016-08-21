@@ -1,6 +1,6 @@
-package com.example.Result.PartsOfSpeech;
+package com.example.result.partsOfSpeech;
 
-import com.example.Result.PartOfSpeech;
+import com.example.result.PartOfSpeech;
 
 public class Noun implements PartOfSpeech {
     private String name;
