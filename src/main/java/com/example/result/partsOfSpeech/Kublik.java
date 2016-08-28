@@ -1,12 +1,11 @@
 package com.example.result.partsOfSpeech;
 
-import com.example.result.PartOfSpeech;
 
-public class Noun implements PartOfSpeech {
+public class Kublik implements PartOfSpeech{
     private String name;
 
-    public Noun() {
-        this.name = "Noun";
+    public Kublik(String interpretation) {
+        this.name = "Kublik";
     }
 
     @Override

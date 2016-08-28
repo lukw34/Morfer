@@ -1,22 +1,25 @@
 package com.example.result;
 
+import com.example.result.partsOfSpeech.PartOfSpeech;
+import com.example.result.rules.PartOfSpeechRules;
+
 public class Tag {
     private String lemma;
     private String interpretation;
-    private PartOfSpeech partOfSpeech;
+    private PartOfSpeech PartOfSpeach;
 
-    public Tag(String interpretation, String lemma, PartOfSpeech partOfSpeach) {
+    public Tag(String interpretation, String lemma) {
         this.interpretation = interpretation;
         this.lemma = lemma;
-        this.partOfSpeech = partOfSpeach;
+        this.PartOfSpeach = PartOfSpeechRules.getPartsOfSpeech(interpretation);
     }
 
-    public String getPartOfSpeech() {
-        return partOfSpeech.getName();
+    public PartOfSpeech getPartOfSpeach() {
+        return PartOfSpeach;
     }
 
-    public void setPartOfSpeech(PartOfSpeech partOfSpeech) {
-        this.partOfSpeech = partOfSpeech;
+    public void setPartOfSpeach(PartOfSpeech partOfSpeach) {
+        PartOfSpeach = partOfSpeach;
     }
 
     public String getLemma() {

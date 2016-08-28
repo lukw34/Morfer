@@ -1,6 +1,5 @@
 package com.example.result;
 
-import com.example.morpheus.Morpheus;
 import com.example.sample.Sample;
 import com.example.morpheus.MorferService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import pl.sgjp.morfeusz.ResultsIterator;
-import pl.sgjp.morfeusz.app.MorfeuszUtils;
 
 @RestController
 @RequestMapping("/morfer")
