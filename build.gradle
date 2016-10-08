@@ -35,3 +35,7 @@ dependencies {
 bootRun {
 	jvmArgs = ['-Dserver.port=9001']
 }
+
+tasks.withType(JavaExec) {
+	systemProperty "java.library.path", file("./libs")
+}
