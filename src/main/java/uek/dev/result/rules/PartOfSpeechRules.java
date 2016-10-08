@@ -44,6 +44,11 @@ public class PartOfSpeechRules {
 
 
     public static PartOfSpeech getPartsOfSpeech(String interpretation) {
-        return partsOfSpeech.get(interpretation.split(":")[0]).createPartOfSpeech(interpretation);
+        String partOfSpeechKey = interpretation.split(":")[0];
+        if(partsOfSpeech.containsKey(partOfSpeechKey)) {
+            return partsOfSpeech.get(partOfSpeechKey).createPartOfSpeech(interpretation);
+        }
+
+        return new Ignored(interpretation);
     }
 }

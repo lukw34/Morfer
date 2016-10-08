@@ -1,6 +1,5 @@
 package uek.dev.result;
 
-
 import uek.dev.result.partsOfSpeech.PartOfSpeech;
 import uek.dev.result.rules.PartOfSpeechRules;
 

@@ -1,13 +1,10 @@
 package uek.dev.result;
-
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import uek.dev.morpheus.Morpheus;
 import uek.dev.sample.Sample;
 
 import java.util.ArrayList;
-
 
 public class Result {
 
