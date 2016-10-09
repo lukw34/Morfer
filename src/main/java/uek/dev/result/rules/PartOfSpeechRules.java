@@ -39,6 +39,7 @@ public class PartOfSpeechRules {
         partsOfSpeech.put("pred", Predykatyw::new);
         partsOfSpeech.put("prep", Preposition::new);
         partsOfSpeech.put("qub", Kublik::new);
+        partsOfSpeech.put("interp", PunctuationMark::new);
         partsOfSpeech.put("ign", Ignored::new);
     }
 
