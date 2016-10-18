@@ -3,6 +3,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import uek.dev.morpheus.Morpheus;
 import uek.dev.sample.Sample;
+import uek.dev.sample.SentenceNotFoundException;
 
 import java.util.ArrayList;
 
@@ -17,13 +18,14 @@ public class Result {
     @Field
     private ArrayList<Word> interpretations;
 
-    @Field
-    private String sentence;
+    public Result() {}
 
-    Result(Sample sample) {
+    public Result(Sample sample) throws SentenceNotFoundException {
+        if(sample.getSentence() == null) {
+            throw new SentenceNotFoundException();
+        }
         id = counter;
         counter ++;
-        this.sentence = sample.getSentence();
         this.interpretations = Morpheus.getResult(sample);
     }
 
@@ -37,13 +39,5 @@ public class Result {
 
     public void setInterpretations(ArrayList<Word> interpretations) {
         this.interpretations = interpretations;
-    }
-
-    public String getSentence() {
-        return sentence;
-    }
-
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
     }
 }

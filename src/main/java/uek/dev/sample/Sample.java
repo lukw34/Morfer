@@ -3,7 +3,8 @@ package uek.dev.sample;
 public class Sample {
     private String sentence;
 
-    public Sample() {}
+    public Sample() {
+    }
 
     public Sample(String sentence) {
         this.sentence = sentence;
