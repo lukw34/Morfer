@@ -13,7 +13,7 @@ public class Tag {
         this.lexemClass = LexemClassRules.getLexemClass(interpretation);
     }
 
-    public LexemClass getLexemeClass() {
+    public LexemClass getLexemClass() {
         return lexemClass;
     }
 

@@ -1,8 +1,8 @@
 package uek.dev.result.gramatical.category;
 
 public enum GramaticalNumberValues {
-    SINGULAR("singular"),
-    PLURAL("plural");
+    SINGULAR("liczba pojedyncza"),
+    PLURAL("liczba mnoga");
     private final String  valueName;
 
     GramaticalNumberValues(String valueName) {

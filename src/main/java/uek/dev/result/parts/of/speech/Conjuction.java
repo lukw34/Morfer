@@ -7,7 +7,7 @@ public class Conjuction implements LexemClass {
     private String name;
 
     public Conjuction(String interpretation) {
-        this.name = "Conjuction";
+        this.name = "spojnik";
     }
 
     @Override

@@ -1,4 +1,5 @@
 package uek.dev.result;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import uek.dev.morpheus.Morpheus;
@@ -7,6 +8,7 @@ import uek.dev.sample.SampleNotFoundException;
 
 import java.util.ArrayList;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result {
 
     private static Long counter = 1L;

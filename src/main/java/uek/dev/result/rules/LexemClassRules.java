@@ -21,9 +21,9 @@ public class LexemClassRules {
         LEXEM_CLASSES.put("adjp", Adjective::new);
         LEXEM_CLASSES.put("adv", Adverb::new);
         LEXEM_CLASSES.put("num", Numeral::new);
-        LEXEM_CLASSES.put("ppron12", Pronoun::new);
-        LEXEM_CLASSES.put("ppron3", Pronoun::new);
-        LEXEM_CLASSES.put("siebie", Pronoun::new);
+        LEXEM_CLASSES.put("ppron12", Pronoun12::new);
+        LEXEM_CLASSES.put("ppron3", Pronoun3::new);
+        LEXEM_CLASSES.put("siebie", PronounSiebie::new);
         LEXEM_CLASSES.put("fin", Verb::new);
         LEXEM_CLASSES.put("bedzie", Verb::new);
         LEXEM_CLASSES.put("aglt", Verb::new);
@@ -41,6 +41,7 @@ public class LexemClassRules {
         LEXEM_CLASSES.put("prep", Preposition::new);
         LEXEM_CLASSES.put("qub", Kublik::new);
         LEXEM_CLASSES.put("interp", PunctuationMark::new);
+        LEXEM_CLASSES.put("conj", Conjuction::new);
         LEXEM_CLASSES.put("ign", Ignored::new);
     }
 

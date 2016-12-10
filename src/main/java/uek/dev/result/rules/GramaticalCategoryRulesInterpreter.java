@@ -43,6 +43,18 @@ public class GramaticalCategoryRulesInterpreter {
             case GRAMATICAL_GRADE:
                 rule = new GramaticalGradeRules();
                 break;
+            case GRAMATICAL_ACCOMMODATIVE:
+                rule= new GramaticalAccommodativeRules();
+                break;
+            case GRAMATICAL_ACCENT:
+                rule = new GramaticalAccentRules();
+                break;
+            case GRAMATICAL_POST_PREPOSITIONALITY:
+                rule = new GramaticalPostPrepositionalityRules();
+                break;
+            case GRAMATICAL_PERSON:
+                rule = new GramaticalPersonRules();
+                break;
             default:
                 return null;
         }

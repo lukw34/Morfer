@@ -14,7 +14,7 @@ public class GramaticalGradeRules implements GramaticalCategoryRule {
     static  {
         GRAMATICAL_GRADE_VALUES_MAP = new HashMap<>();
         GRAMATICAL_GRADE_VALUES_MAP.put("pos", GramaticalGradeValues.POS.getValueName());
-        GRAMATICAL_GRADE_VALUES_MAP.put("comp", GramaticalGradeValues.COMP.getValueName());
+        GRAMATICAL_GRADE_VALUES_MAP.put("com", GramaticalGradeValues.COMP.getValueName());
         GRAMATICAL_GRADE_VALUES_MAP.put("sup", GramaticalGradeValues.SUP.getValueName());
     }
 

@@ -7,7 +7,7 @@ public class Kublik implements LexemClass {
     private String name;
 
     public Kublik(String interpretation) {
-        this.name = "Kublik";
+        this.name = "kublik";
     }
 
     @Override

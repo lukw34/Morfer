@@ -1,13 +1,13 @@
 package uek.dev.result.gramatical.category;
 
 public enum GramaticalCaseValues {
-    NOM("nominative"),
-    GEN("genitive"),
-    DAT("dative"),
-    ACC("accusative"),
-    INST("instrumental case"),
-    LOC("locative"),
-    VOC("vocative");
+    NOM("mianownik"),
+    GEN("dopelniacz"),
+    DAT("celownik"),
+    ACC("biernik"),
+    INST("narzednik"),
+    LOC("miejscownik"),
+    VOC("wolacz");
     private final String VALUE_NAME;
 
     GramaticalCaseValues(String valueName) {
