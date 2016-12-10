@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Predykatyw implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Predykatyw implements LexemClass {
     private String name;
 
     public Predykatyw(String interpretation) {

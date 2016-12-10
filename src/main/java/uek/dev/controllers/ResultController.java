@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uek.dev.morpheus.MorferService;
 import uek.dev.result.Result;
 import uek.dev.sample.Sample;
-import uek.dev.sample.SentenceNotFoundException;
+import uek.dev.sample.SampleNotFoundException;
 
 import javax.validation.Valid;
 
@@ -23,9 +23,9 @@ public class ResultController {
     MorferService morferService;
 
     @RequestMapping(value ="", method = RequestMethod.POST)
-    public ResponseEntity<Result> sendSample(@Valid @RequestBody Sample sample) throws SentenceNotFoundException {
+    public ResponseEntity<Result> sendSample(@Valid @RequestBody Sample sample) throws SampleNotFoundException {
         Result result = new Result(sample);
-        morferService.saveResult(result);
+//        morferService.saveResult(result);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 

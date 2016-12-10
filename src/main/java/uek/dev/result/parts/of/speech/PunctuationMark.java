@@ -1,6 +1,8 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
-public class PunctuationMark implements PartOfSpeech {
+import uek.dev.result.LexemClass;
+
+public class PunctuationMark implements LexemClass {
     private String name;
 
     public PunctuationMark(String interpretation) {

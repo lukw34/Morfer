@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Verb implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Verb implements LexemClass {
     private String name;
 
     public Verb(String interpretation) {

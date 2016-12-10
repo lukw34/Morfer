@@ -1,25 +1,24 @@
 package uek.dev.result;
 
-import uek.dev.result.partsOfSpeech.PartOfSpeech;
-import uek.dev.result.rules.PartOfSpeechRules;
+import uek.dev.result.rules.LexemClassRules;
 
 public class Tag {
     private String lemma;
     private String interpretation;
-    private PartOfSpeech PartOfSpeach;
+    private LexemClass lexemClass;
 
     public Tag(String interpretation, String lemma) {
         this.interpretation = interpretation;
         this.lemma = lemma;
-        this.PartOfSpeach = PartOfSpeechRules.getPartsOfSpeech(interpretation);
+        this.lexemClass = LexemClassRules.getLexemClass(interpretation);
     }
 
-    public PartOfSpeech getPartOfSpeach() {
-        return PartOfSpeach;
+    public LexemClass getLexemeClass() {
+        return lexemClass;
     }
 
-    public void setPartOfSpeach(PartOfSpeech partOfSpeach) {
-        PartOfSpeach = partOfSpeach;
+    public void setLexemClass(LexemClass partOfSpeach) {
+        lexemClass = partOfSpeach;
     }
 
     public String getLemma() {

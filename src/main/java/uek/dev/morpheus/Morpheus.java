@@ -16,20 +16,22 @@ public class Morpheus {
     private static Morfeusz morpheusInstance = Morfeusz.createInstance(MorfeuszUsage.ANALYSE_ONLY);
 
     public static ArrayList<Word> getResult(Sample sample) {
-        ResultsIterator resultsIterator = morpheusInstance.analyseAsIterator(sample.getSentence());
+        ResultsIterator resultsIterator = morpheusInstance.analyseAsIterator(sample.getSample());
         int counter = -1;
-        ArrayList<Word> sentence = new ArrayList<>();
+        ArrayList<Word> morferResult = new ArrayList<>();
         ArrayList<Tag> actualTagsList = new ArrayList<>();
 
         while (resultsIterator.hasNext()) {
-            String[] column = MorfeuszUtils.getInterpretationString(resultsIterator.next(), morpheusInstance).split(" ");
+            String result = MorfeuszUtils.getInterpretationString(resultsIterator.next(), morpheusInstance);
+            System.out.println(result);
+            String[] column = result.split(" ");
 
             int wordCounter = Integer.parseInt(column[0]);
 
             if (wordCounter != counter) {
                 counter = wordCounter;
-                sentence.add(wordCounter, new Word(column[2]));
-                actualTagsList = sentence.get(wordCounter).getTags();
+                morferResult.add(wordCounter, new Word(column[2]));
+                actualTagsList = morferResult.get(wordCounter).getTags();
             }
 
             String lemma = column[3];
@@ -37,6 +39,6 @@ public class Morpheus {
             actualTagsList.add(new Tag(interpretation, lemma));
         }
 
-        return sentence;
+        return morferResult;
     }
 }

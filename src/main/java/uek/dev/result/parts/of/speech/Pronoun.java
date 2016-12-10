@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Pronoun implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Pronoun implements LexemClass {
     private String name;
 
     public Pronoun(String interpretation) {

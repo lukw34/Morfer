@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Kublik implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Kublik implements LexemClass {
     private String name;
 
     public Kublik(String interpretation) {

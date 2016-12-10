@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Adverb implements PartOfSpeech {
+import uek.dev.result.LexemClass;
+
+public class Adverb implements LexemClass {
     private String name;
 
     public Adverb(String interpretation) {
@@ -9,7 +11,7 @@ public class Adverb implements PartOfSpeech {
     }
 
     @Override
-    public String getName() {
+     public String getName() {
         return name;
     }
 }

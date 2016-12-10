@@ -1,20 +1,20 @@
 package uek.dev.sample;
 
 public class Sample {
-    private String sentence;
+    private String sample;
 
     public Sample() {
     }
 
-    public Sample(String sentence) {
-        this.sentence = sentence;
+    public Sample(String sample) {
+        this.sample = sample;
     }
 
-    public String getSentence() {
-        return this.sentence;
+    public String getSample() {
+        return this.sample;
     }
 
-    public void setSentence(String sentence) {
-        this.sentence = sentence;
+    public void setSentence(String sample) {
+        this.sample = sample;
     }
 }

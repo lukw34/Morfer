@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Preposition implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Preposition implements LexemClass {
     private String name;
 
     public Preposition(String interpretation) {

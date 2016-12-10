@@ -1,6 +1,8 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
-public class Substantive implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Substantive implements LexemClass {
     private String name;
 
     public Substantive(String interpretations) {

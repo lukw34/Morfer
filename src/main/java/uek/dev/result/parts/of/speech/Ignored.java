@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Ignored implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Ignored implements LexemClass {
     private String name;
 
     public Ignored(String interpretation) {

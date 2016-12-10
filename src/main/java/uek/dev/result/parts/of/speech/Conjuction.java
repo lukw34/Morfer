@@ -1,7 +1,9 @@
-package uek.dev.result.partsOfSpeech;
+package uek.dev.result.parts.of.speech;
 
 
-public class Conjuction implements PartOfSpeech{
+import uek.dev.result.LexemClass;
+
+public class Conjuction implements LexemClass {
     private String name;
 
     public Conjuction(String interpretation) {

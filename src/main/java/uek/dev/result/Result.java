@@ -3,7 +3,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Field;
 import uek.dev.morpheus.Morpheus;
 import uek.dev.sample.Sample;
-import uek.dev.sample.SentenceNotFoundException;
+import uek.dev.sample.SampleNotFoundException;
 
 import java.util.ArrayList;
 
@@ -20,9 +20,9 @@ public class Result {
 
     public Result() {}
 
-    public Result(Sample sample) throws SentenceNotFoundException {
-        if(sample.getSentence() == null) {
-            throw new SentenceNotFoundException();
+    public Result(Sample sample) throws SampleNotFoundException {
+        if(sample.getSample() == null) {
+            throw new SampleNotFoundException();
         }
         id = counter;
         counter ++;
