@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class GramaticalPostPrepositionalityRules implements GramaticalCategoryRule {
 
-    private static final String UNDEFINED = "undefined";
     private static final Map<String, String> GRAMATICAL_POST_PREPOSITIONALITY_VALUES_MAP;
 
     static  {

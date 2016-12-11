@@ -6,7 +6,8 @@ import uek.dev.result.LexemClass;
 public class Verb implements LexemClass {
     private String name;
 
-    public Verb(String interpretation) {
+
+    public Verb() {
         this.name = "Verb";
     }
 

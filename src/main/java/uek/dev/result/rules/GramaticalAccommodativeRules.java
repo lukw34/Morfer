@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class GramaticalAccommodativeRules implements GramaticalCategoryRule {
 
-    private static final String UNDEFINED = "undefined";
     private static final Map<String, String> GRAMATICAL_ACCOMODATIVE_VALUES_MAP;
 
     static  {

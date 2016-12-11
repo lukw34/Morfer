@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class GramaticalAccentRules implements GramaticalCategoryRule {
 
-    private static final String UNDEFINED = "undefined";
     private static final Map<String, String> GRAMATICAL_ACCENT_VALUES_MAP;
 
     static  {

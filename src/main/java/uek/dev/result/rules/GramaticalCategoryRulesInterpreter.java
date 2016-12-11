@@ -55,6 +55,12 @@ public class GramaticalCategoryRulesInterpreter {
             case GRAMATICAL_PERSON:
                 rule = new GramaticalPersonRules();
                 break;
+            case GRAMATICAL_ASPECT:
+                rule = new GramaticalAspectRules();
+                break;
+            case GRAMATICAL_NEGATE:
+                rule = new GramaticalNegateRules();
+                break;
             default:
                 return null;
         }

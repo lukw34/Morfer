@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class GramaticalPersonRules implements GramaticalCategoryRule {
 
-    private static final String UNDEFINED = "undefined";
     private static final Map<String, String> GRAMATICAL_PERSON_VALUES_MAP;
 
     static  {

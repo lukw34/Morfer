@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class GramaticalNumberRules implements GramaticalCategoryRule {
 
-    private static final String UNDEFINED = "undefined";
     private static final Map<String, String> GRAMATICAL_NUMBER_VALUES_MAP ;
 
     static  {

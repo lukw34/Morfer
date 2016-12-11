@@ -17,8 +17,8 @@ public class PronounSiebie implements LexemClass {
     private ArrayList<String> gramaticalCase;
 
     public PronounSiebie(String interpretation) {
-        this.INTERPRETATION = interpretation;
         this.name = "Pronoun";
+        this.INTERPRETATION = interpretation;
         String[] interpretationParts = INTERPRETATION.split(":");
         gramaticalCase = GramaticalCategoryRulesInterpreter.getValues(GramaticalCategory.GRAMATICAL_CASE,
                 interpretationParts[1]);
