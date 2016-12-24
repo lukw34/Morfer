@@ -1,0 +1,50 @@
+{
+  "interpretations": [
+    {
+      "tags": [
+        {
+          "lemma": "przykładowy",
+          "interpretation": "adj:sg:acc:m3:pos",
+          "lexemClass": {
+            "name": "przymiotnik",
+            "gramaticalNumber": [
+              "liczba pojedyncza"
+            ],
+            "gramaticalCase": [
+              "biernik"
+            ],
+            "gramaticalGender": [
+              "meski rzeczoyw"
+            ],
+            "gramaticalGrade": [
+              "rowny"
+            ]
+          }
+        },
+        {
+          "lemma": "przykładowy",
+          "interpretation": "adj:sg:nom.voc:m1.m2.m3:pos",
+          "lexemClass": {
+            "name": "przymiotnik",
+            "gramaticalNumber": [
+              "liczba pojedyncza"
+            ],
+            "gramaticalCase": [
+              "mianownik",
+              "wolacz"
+            ],
+            "gramaticalGender": [
+              "meski osobowy",
+              "meski zwierzecy",
+              "meski rzeczoyw"
+            ],
+            "gramaticalGrade": [
+              "rowny"
+            ]
+          }
+        }
+      ],
+      "text": "Przykładowy"
+    }
+  ]
+}

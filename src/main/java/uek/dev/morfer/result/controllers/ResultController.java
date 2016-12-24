@@ -42,7 +42,7 @@ public class ResultController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "file", headers = "content-type=multipart/*", method = RequestMethod.POST)
+    @RequestMapping(value = "csv", headers = "content-type=multipart/*", method = RequestMethod.POST)
     public ResponseEntity<String> handleFile(@RequestParam("file") MultipartFile multipartFile) {
         String fileData = fileService.readFile(multipartFile);
         String result = csvMorferService.getCSVData(morferService.getMorferResult(fileData));
