@@ -1,0 +1,13 @@
+#%RAML 1.0 Resource
+post:
+    description: Wynik działania programu morfeusz w formacie JSON.
+    body:
+        application/json:
+            schema: !include ../schemas/morfer_json_post.json
+            example: !include ../examples/morfer_json_post.json
+    responses:
+        200:
+            body:
+                application/json:
+                    schema: !include ../schemas/morfer_json_result.json
+                    example: !include ../examples/morfer_result_json.json

@@ -1,0 +1,10 @@
+#%RAML 1.0
+title: Morfer
+version: v0.0.2
+baseUri: 138.197.33.152:9001clear
+mediaType:  application/json
+resourceTypes:
+traits:
+/morfer:
+    /json: !include resources/morfer_json.raml
+    /csv: !include resources/morfer_csv.raml

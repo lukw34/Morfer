@@ -1,0 +1,19 @@
+#%RAML 1.0 Resource
+post:
+    description: Wynik działania programu morfeusz w formacie csv.
+    body:
+        multipart/form-data:
+            properties:
+                file:
+                    description: Plik tekstowy do analizy.
+                    required: true
+                    type: file
+    responses:
+        200:
+            body:
+                text/plain:
+                    type: file
+                    example: |
+                         indexA, indexB, word, lemma, interpretation, additionalProperty
+                         0,1,Przykładowo,przykładowo,adv:pos,brak
+                         1,2,.,.,interp,brak

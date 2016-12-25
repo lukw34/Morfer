@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Wynik zwracana użytkownikowi.",
+  "type": "object",
+  "properties": {
+    "interpretations": {
+      "description": "Tablica zawierająca interpretacje wszystkich wyrazów.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "description": "Oryginalna wersja słowa.",
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "description": "Lista możliwych interpretacji słowa.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "lemma": {
+                  "type": "string",
+                  "description": "Forma podstawowa słowa."
+                },
+                "interpretation": {
+                  "type": "string",
+                  "description": "Ciąg znaków będący wynikiem analizy programu morfeusz"
+                },
+                "lexemClass": {
+                  "type": "object",
+                  "description": "Szczegóły dotyczące formy leksemu.",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Nazwa części mowy."
+                    },
+                    "gramaticalAccent": {
+                      "description": "Zestaw akcentów gramatycznych.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalAccommodative": {
+                      "description": "Zestaw akomodacji.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalAspect": {
+                      "description": "Zestaw aspektów gramatycznych.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalCase": {
+                      "description": "Zestaw przypadków gramatycznych.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalGender": {
+                      "description": "Zestaw rodzajów gramatycznych.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalGrade": {
+                      "description": "Stopień gramatyczny.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalNegata": {
+                      "description": "Występowanie negacji.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalNumber": {
+                      "description": "Liczba gramatyczna.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalPerson": {
+                      "description": "Osoba gramatyczna.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "gramaticalPostPrepositionlity": {
+                      "description": "Poprzyimkowość.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              "required": [
+                "lemma",
+                "interpretation",
+                "lexemClass"
+              ]
+            }
+          }
+        },
+        "required": [
+          "text",
+          "tags"
+        ]
+      }
+    }
+  },
+  "required": [
+    "interpretations"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Request body.",
+  "type": "object",
+  "properties": {
+    "sample": {
+      "description": "Tekst do analizy.",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sample"
+  ]
+}
