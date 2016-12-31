@@ -30,10 +30,15 @@ public class ResultController {
     @Autowired
     CSVService csvMorferService;
 
-    @RequestMapping(value = {"", "json"}, headers = "content-type=application/json", method = RequestMethod.POST)
-    public ResponseEntity<Result> sendSample(@Valid @RequestBody Sample sample) throws SampleNotFoundException {
+    @RequestMapping(value = "", headers = "content-type=application/json", method = RequestMethod.POST)
+    public ResponseEntity<ArrayList<String>> simpleResult(@Valid @RequestBody Sample sample) {
+        return new ResponseEntity<>(morferService.getMorferResult(sample.getSample()), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "json", headers = "content-type=application/json", method = RequestMethod.POST)
+    public ResponseEntity<Result> jsonResult(@Valid @RequestBody Sample sample) throws SampleNotFoundException {
         String stringSample = sample.getSample();
-        if(stringSample == null) {
+        if (stringSample == null) {
             throw new SampleNotFoundException();
         }
 
@@ -43,7 +48,7 @@ public class ResultController {
     }
 
     @RequestMapping(value = "csv", headers = "content-type=multipart/*", method = RequestMethod.POST)
-    public ResponseEntity<String> handleFile(@RequestParam("file") MultipartFile multipartFile) {
+    public ResponseEntity<String> csvResult(@RequestParam("file") MultipartFile multipartFile) {
         String fileData = fileService.readFile(multipartFile);
         String result = csvMorferService.getCSVData(morferService.getMorferResult(fileData));
         return new ResponseEntity<>(result, HttpStatus.OK);
