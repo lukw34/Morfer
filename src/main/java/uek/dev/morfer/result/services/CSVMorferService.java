@@ -14,10 +14,8 @@ public class CSVMorferService implements CSVService {
     @Override
     public String getCSVData(ArrayList<String> morferResult) {
         StringBuilder CSVBuilder = new StringBuilder();
-        CSVBuilder.append(CSVMorferResult.getHeader());
-        CSVBuilder.append("\n");
         morferResult.stream()
-                .map(val -> new CSVMorferResult(val.split(" ")))
+                .map(val -> new CSVMorferResult(val.split(" "), ";"))
                 .forEach(csvRow -> {
                     CSVBuilder.append(csvRow.toString());
                     CSVBuilder.append("\n");
