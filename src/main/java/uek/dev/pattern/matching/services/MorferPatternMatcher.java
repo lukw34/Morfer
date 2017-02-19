@@ -15,8 +15,10 @@ public class MorferPatternMatcher implements PatternMatcher {
 
     @Override
     public boolean match(String entry, String pattern) {
-        ArrayList<Word> analizedEntry = morferService.createModel(entry);
-        int entrySize = analizedEntry.size();
+        ArrayList<Word> analyzedEntry = morferService.createModel(entry);
+        int entrySize = analyzedEntry.size();
+
+
         //+ ten wyraz ma byc bezposrednio po nastepnym
         // > kolejnosc ale po drodze moze cos byc
         // ! nie ma wystapic
