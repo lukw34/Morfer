@@ -42,6 +42,10 @@ bootRun {
 	jvmArgs = ['-Dserver.port=9001']
 }
 
+test {
+	jvmArgs = ['-Djava.library.path=./libs']
+}
+
 tasks.withType(JavaExec) {
 	systemProperty "java.library.path", file("./libs")
 }

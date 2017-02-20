@@ -1,5 +1,6 @@
 package uek.dev.pattern.matching.services.parser;
 
+import uek.dev.pattern.matching.services.tokenizer.Pattern;
 import uek.dev.pattern.matching.services.tokenizer.TokensGroup;
 
 import java.util.ArrayDeque;
@@ -60,7 +61,8 @@ public class Parser {
     }
 
     public ArrayList<TokensGroup> getTokensGroups() {
-        actualParserState.getLast(this.tokensHeap);
+        TokensGroup last = actualParserState.getLast(this.tokensHeap);
+        this.tokensGroups.add(last);
         return tokensGroups;
     }
 
@@ -81,10 +83,9 @@ public class Parser {
         }
     }
 
-    String joinTokens() {
-        StringBuilder strBuilder = new StringBuilder();
-        this.tokensHeap.forEach(token -> strBuilder.append(token).append(" "));
-        return strBuilder.toString().trim();
+    ArrayList<Pattern> joinTokens() {
+        ArrayList<Pattern> patterns = new ArrayList<>();
+        this.tokensHeap.stream().map(Pattern::new).forEach(patterns::add);
+        return patterns;
     }
-
 }

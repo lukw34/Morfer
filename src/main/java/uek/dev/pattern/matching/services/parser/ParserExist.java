@@ -31,10 +31,10 @@ public class ParserExist implements ParserState {
 
     @Override
     public TokensGroup getLast(ArrayDeque<String> tokensHeap) {
-        if(tokensHeap.size() > 1) {
+       /* if(tokensHeap.size() > 1) {
             tokensHeap.removeFirst();
         }
-
+*/
         TokensGroup tokensGroup = new ExistTokensGroup(parser.joinTokens());
         tokensHeap.clear();
         return tokensGroup;

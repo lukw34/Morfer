@@ -18,11 +18,12 @@ import javax.validation.Valid;
 public class PatternMatching {
 
     @Autowired
-    PatternMatcher morferPatternMatcher;
+    private PatternMatcher morferPatternMatcher;
 
-    @RequestMapping(value = "find", headers = "content-type=application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/match", headers = "content-type=application/json", method = RequestMethod.POST)
     ResponseEntity<String> findPattern(@Valid @RequestBody  Entry entry) {
-        morferPatternMatcher.match(entry.getSource(), entry.getPattern());
-        return new ResponseEntity<String>("Done", HttpStatus.OK);
+        boolean result = morferPatternMatcher.match(entry.getSource(), entry.getPattern());
+        String body = result ? "IT MATCH PATTERN !!" : "IT DOESN'T MATCH PATTERN";
+        return new ResponseEntity<>(body, HttpStatus.OK);
     }
 }
