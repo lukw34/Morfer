@@ -30,7 +30,6 @@ public class ParserOrder implements ParserState {
 
     @Override
     public void handleOperator(SpecialSign actual, SpecialSign previous) {
-
         switch (actual) {
             case EXIST:
                 if (previous == SpecialSign.EXIST) {

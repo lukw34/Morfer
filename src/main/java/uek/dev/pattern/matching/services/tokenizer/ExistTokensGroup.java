@@ -10,11 +10,10 @@ public class ExistTokensGroup implements TokensGroup {
     }
 
     @Override
-    public boolean process(ArrayList<String> entry) {
+    public boolean check(ArrayList<String> entry) {
         for (Pattern pattern : patterns) {
 
-            boolean isNoneMatch = entry.stream().noneMatch(pattern::match);
-            boolean isMatch = pattern.isNegate() != isNoneMatch;
+            boolean isMatch = entry.stream().noneMatch(pattern::check) != pattern.isNegate();
             if(isMatch) {
                 return false;
             }

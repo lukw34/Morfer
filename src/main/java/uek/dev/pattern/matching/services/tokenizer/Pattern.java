@@ -1,9 +1,7 @@
 package uek.dev.pattern.matching.services.tokenizer;
 
-import java.util.Objects;
-
-public class Pattern {
-    private final String SEPARATOR = ":";
+public class Pattern implements PatternValidator {
+    private final static String SEPARATOR = ":";
     private String pattern;
     private boolean negate;
 
@@ -20,7 +18,7 @@ public class Pattern {
         }
     }
 
-    boolean match(String entry) {
+    public boolean check(String entry) {
         String[] patternElements = pattern.split(SEPARATOR);
         String[] entryElements = entry.split(SEPARATOR);
         for (int i = 0; i < patternElements.length; i++) {
