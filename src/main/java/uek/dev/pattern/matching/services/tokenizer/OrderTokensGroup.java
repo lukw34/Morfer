@@ -11,7 +11,7 @@ public class OrderTokensGroup implements TokensGroup {
     }
 
     @Override
-    public boolean process(ArrayList<String> entries) {
+    public boolean check(ArrayList<String> entries) {
         int patternSize = patterns.size();
         int patternIndicator = 0;
         for (int index = 0; index < entries.size(); index++) {
@@ -24,7 +24,7 @@ public class OrderTokensGroup implements TokensGroup {
                     return false;
                 }
             } else {
-                isMatch = actualPattern.match(entry);
+                isMatch = actualPattern.check(entry);
             }
             if (isMatch) {
                 patternIndicator += 1;
@@ -40,7 +40,7 @@ public class OrderTokensGroup implements TokensGroup {
 
     private boolean handleNegate(ArrayList<String> entries, Pattern actualPattern, int startPoint) {
         for (int index = startPoint; index < entries.size(); index++) {
-            boolean isMatch = actualPattern.match(entries.get(index));
+            boolean isMatch = actualPattern.check(entries.get(index));
             if(isMatch) {
                 return false;
             }

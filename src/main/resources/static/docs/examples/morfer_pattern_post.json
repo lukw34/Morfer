@@ -1,0 +1,4 @@
+{
+  "source": "Ala ma kota.",
+  "pattern": "ala:subst .:interp  Al:subst:sg > Alo:subst > !nie:subst mieć:v1:fin + mieć:v2:fin"
+}

@@ -11,7 +11,7 @@ public class LinkingTokensGroup implements TokensGroup {
     }
 
     @Override
-    public boolean process(ArrayList<String> entry) {
+    public boolean check(ArrayList<String> entry) {
         int patternSize = patterns.size();
         int startPoint = 0;
         int limit = entry.size() - patternSize;
@@ -30,7 +30,7 @@ public class LinkingTokensGroup implements TokensGroup {
     private boolean isPatternMatch(ArrayList<String> sample) {
         for (int i = 0; i < this.patterns.size(); i++) {
             Pattern pattern = patterns.get(i);
-            boolean isMatch = pattern.match(sample.get(i));
+            boolean isMatch = pattern.check(sample.get(i));
             if(isMatch == pattern.isNegate()) {
                 return false;
             }

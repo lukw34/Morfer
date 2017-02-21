@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Request body.",
+  "type": "object",
+  "properties": {
+    "source": {
+      "description": "Tekst, w którym będzie wyszukiwany wzorzec.",
+      "type": "string"
+    },
+    "pattern": {
+      "description": "Wzorzec napisany według okreslonego schematu. Czesci skladowe wzorca oddzielone są znakiem: ':'.  \n' ' -> element wystepuje w tekscie w dowolnym miejscu. \n'+' -> element występuje bezposrednio po poprzednim. \n '>' -> element występuje po poprzednim jednak pomiędzy mogą występować inne elementy. \n'!' -> negacja",
+      "type": "string"
+    }
+  },
+  "required": [
+    "source",
+    "pattern"
+  ]
+}

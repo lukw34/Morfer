@@ -25,8 +25,7 @@ public class Tokenizer {
 
     public boolean process(ArrayList<String> entry) {
         boolean result = this.tokensGroups.stream()
-                .map(tokensGroup -> tokensGroup.process(entry))
-                .allMatch(val -> val);
+                .allMatch(val -> val.check(entry));
         tokensGroups.clear();
         return result;
     }
