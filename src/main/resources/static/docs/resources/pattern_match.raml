@@ -1,0 +1,12 @@
+#%RAML 1.0 Resource
+post:
+    description: Zwraca wynik poszukiwania wzorca w tekscie.
+    body:
+        application/json:
+            schema: !include ../schemas/morfer_pattern_post.json
+            example: !include ../examples/morfer_pattern_post.json
+    responses:
+        200:
+            body:
+                text/plain:
+                    example: IT MATCH PATTERN

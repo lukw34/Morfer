@@ -1,6 +1,4 @@
 package uek.dev.morfer.result.models.json.parts.of.speech;
-
-
 import uek.dev.morfer.result.models.json.GramaticalCategory;
 import uek.dev.morfer.result.models.json.LexemClass;
 import uek.dev.morfer.result.models.json.rules.GramaticalCategoryRulesInterpreter;
@@ -14,14 +12,18 @@ public class Adverb implements LexemClass {
     private ArrayList<String> gramaticalGrade;
 
     public Adverb(String interpretation) {
+        this.gramaticalGrade = new ArrayList<>();
         this.INTERPRETATION = interpretation;
         this.name = "Adverb";
         String[] interpretationParts = INTERPRETATION.split(":");
-        gramaticalGrade = GramaticalCategoryRulesInterpreter.getValues(GramaticalCategory.GRAMATICAL_GRADE,
-                interpretationParts[1]);
+        if(interpretationParts.length > 1) {
+            gramaticalGrade = GramaticalCategoryRulesInterpreter.getValues(GramaticalCategory.GRAMATICAL_GRADE,
+                    interpretationParts[1]);
+        }
     }
+
     @Override
-     public String getName() {
+    public String getName() {
         return name;
     }
 

@@ -23,6 +23,7 @@ targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
@@ -30,6 +31,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile "org.mockito:mockito-core:2.+"
 }
 
 compileJava {
@@ -38,6 +40,10 @@ compileJava {
 
 bootRun {
 	jvmArgs = ['-Dserver.port=9001']
+}
+
+test {
+	jvmArgs = ['-Djava.library.path=./libs']
 }
 
 tasks.withType(JavaExec) {
