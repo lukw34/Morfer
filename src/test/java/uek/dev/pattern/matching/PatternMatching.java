@@ -55,4 +55,12 @@ public class PatternMatching {
         boolean result = patternMatcher.match(entry, pattern);
         assertEquals(true, result);
     }
+
+    @Test
+    public void fix1() {
+        String pattern = "Ala";
+        String entry = "Ala miała kota i dużo wczoraj lam.";
+        boolean result = patternMatcher.match(entry, pattern);
+        assertEquals(true, result);
+    }
 }
