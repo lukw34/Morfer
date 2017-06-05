@@ -29,7 +29,7 @@ public class MorferServiceImpl implements MorferService {
                 index = index_A;
                 morferResult.add(index_A, new Segment(columns[MorferResultIndexes.WORD.getIndex()],
                         index_A + "|" + index_B));
-                actualInterpretationList = morferResult.get(index_A).getInterpretations();
+                actualInterpretationList = morferResult.get(index_A).getInterpretacje();
             }
 
             String lemma = columns[MorferResultIndexes.LEMMA.getIndex()];

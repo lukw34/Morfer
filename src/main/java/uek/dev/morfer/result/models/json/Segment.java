@@ -22,7 +22,7 @@ public class Segment {
         this.segment = segment;
     }
 
-    public String getPosition() {
+    public String getPozycja() {
         return position;
     }
 
@@ -30,7 +30,7 @@ public class Segment {
         this.position = position;
     }
 
-    public ArrayList<Interpretation> getInterpretations() {
+    public ArrayList<Interpretation> getInterpretacje() {
         return interpretations;
     }
 

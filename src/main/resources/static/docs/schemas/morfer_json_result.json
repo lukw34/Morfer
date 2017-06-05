@@ -12,11 +12,11 @@
           "description": "Oryginalna wersja słowa.",
           "type": "string"
         },
-        "position": {
+        "pozycja": {
           "description": "Pycja segmentu w tekście",
           "type": "string"
         },
-        "interpretations": {
+        "interpretacje": {
           "type": "array",
           "description": "Lista możliwych interpretacji słowa.",
           "items": {
@@ -38,10 +38,17 @@
                 "type": "string",
                 "description": "Nazwa częsci mowy"
               },
-              "klasyGramatyczne": {
+              "kategorieGramatyczne": {
                 "type": "object",
                 "description": "Wartości poszczególnych klas gramatycznych.",
                 "properties": {
+                  "*": {
+                    "type": "array",
+                    "description": "Lista wartości przypisanych do kategorii.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }

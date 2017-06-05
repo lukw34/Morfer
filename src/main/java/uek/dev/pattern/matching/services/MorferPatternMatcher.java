@@ -20,7 +20,7 @@ public class MorferPatternMatcher implements PatternMatcher {
         Parser parser = new Parser();
         Tokenizer tokenizer = new Tokenizer(pattern, parser);
         analyzedEntry
-                .forEach(val -> val.getInterpretations()
+                .forEach(val -> val.getInterpretacje()
                         .forEach(interpretation -> simplifiedEntry.add(interpretation.getLemma() + ":" + interpretation.getTag())));
 
         return tokenizer.process(simplifiedEntry);

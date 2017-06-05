@@ -28,11 +28,11 @@ public class Interpretation {
         return this.fleksemClass.getFleksem();
     }
 
-    public String getWordClass() {
+    public String getCzescMowy() {
         return this.fleksemClass.getWordClass();
     }
 
-    public GrammaticalCategories getGrammaticalCategories() {
+    public GrammaticalCategories getKategorieGramatyczne() {
         return  this.fleksemClass.getGrammaticalCategories();
     }
 }
