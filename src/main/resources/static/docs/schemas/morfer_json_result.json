@@ -34,14 +34,105 @@
                 "type": "string",
                 "description": "Nazwa klasy fleksemu"
               },
-              "czescMowy": {
+              "wordClass": {
                 "type": "string",
                 "description": "Nazwa częsci mowy"
               },
-              "klasyGramatyczne": {
+              "grammaticalCategories": {
                 "type": "object",
                 "description": "Wartości poszczególnych klas gramatycznych.",
                 "properties": {
+                  "accent": {
+                    "description": "Zestaw akcentów gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "accomodative": {
+                    "description": "Zestaw akomadacji gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "aspect": {
+                      "description": "Zestaw aspektów gramatycznych.",
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "case": {
+                    "description": "Zestaw przypadków gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "gender": {
+                    "description": "Zestaw rodzajów gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "grade": {
+                    "description": "Zestaw stopni gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "needDot": {
+                    "description": "Zestaw kategorii gramatycznych związancych z wymagalnoscia kropki.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "negate": {
+                    "description": "Zestaw negacji gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "number": {
+                    "description": "Zestaw liczb gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "person": {
+                    "description": "Zestaw osób gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "pluralTantum": {
+                    "description": "Zestaw pluralTantum.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "postPrepositionality": {
+                    "description": "Zestaw poprzyimkowosci.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "wokalicznosc": {
+                    "description": "Zestaw wokalicznosci gramatycznych.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }

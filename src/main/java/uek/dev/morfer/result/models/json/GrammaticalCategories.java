@@ -9,20 +9,20 @@ import java.util.function.Consumer;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GrammaticalCategories implements GrammaticalCategoryInterprereter {
-    private ArrayList<String> grammaticalAccent;
-    private ArrayList<String> grammaticalAccomodative;
-    private ArrayList<String> grammaticalAglutynacyjnosc;
-    private ArrayList<String> grammaticalAspect;
+    private ArrayList<String> accent;
+    private ArrayList<String> accomodative;
+    private ArrayList<String> aglutynacyjnosc;
+    private ArrayList<String> aspect;
     private ArrayList<String> grammaticalCase;
-    private ArrayList<String> grammaticalGender;
-    private ArrayList<String> grammaticalGrade;
-    private ArrayList<String> grammaticalNeedDot;
-    private ArrayList<String> grammaticalNegate;
-    private ArrayList<String> grammaticalNumber;
-    private ArrayList<String> grammaticalPerson;
-    private ArrayList<String> grammaticalPluralTantum;
-    private ArrayList<String> grammaticalPostPrepositionality;
-    private ArrayList<String> grammaticalWokalicznosc;
+    private ArrayList<String> gender;
+    private ArrayList<String> grade;
+    private ArrayList<String> needDot;
+    private ArrayList<String> negate;
+    private ArrayList<String> number;
+    private ArrayList<String> person;
+    private ArrayList<String> pluralTantum;
+    private ArrayList<String> postPrepositionality;
+    private ArrayList<String> wokalicznosc;
 
     private final static String UNDEFINED = "undefined";
 
@@ -34,59 +34,59 @@ public class GrammaticalCategories implements GrammaticalCategoryInterprereter {
         switch (grammaticalCategory) {
             case NUMBER:
                 rule = new GrammaticalNumberRules();
-                setter = this::setGrammaticalNumber;
+                setter = this::setNumber;
                 break;
             case CASE:
                 rule = new GrammaticalCaseRules();
-                setter = this::setGrammaticalCase;
+                setter = this::setCase;
                 break;
             case GENDER:
                 rule = new GrammaticalGenderRules();
-                setter = this::setGrammaticalGender;
+                setter = this::setGender;
                 break;
             case PERSON:
                 rule = new GrammaticalPersonRules();
-                setter = this::setGrammaticalPerson;
+                setter = this::setPerson;
                 break;
             case GRADE:
                 rule = new GrammaticalGradeRules();
-                setter = this::setGrammaticalGrade;
+                setter = this::setGrade;
                 break;
             case ASPECT:
                 rule = new GrammaticalAspectRules();
-                setter = this::setGrammaticalAspect;
+                setter = this::setAspect;
                 break;
             case NEGATE:
                 rule = new GrammaticalNegateRules();
-                setter = this::setGrammaticalNegate;
+                setter = this::setNegate;
                 break;
             case ACCOMMODATIVE:
                 rule = new GrammaticalAccommodativeRules();
-                setter = this::setGrammaticalAccomodative;
+                setter = this::setAccomodative;
                 break;
             case ACCENT:
                 rule = new GrammaticalAccentRules();
-                setter = this::setGrammaticalAccent;
+                setter = this::setAccent;
                 break;
             case POST_PREPOSITIONALITY:
                 rule = new GrammaticalPostPrepositionalityRules();
-                setter = this::setGrammaticalPostPrepositionality;
+                setter = this::setPostPrepositionality;
                 break;
             case AGLUTYNACYJNOSC:
                 rule = new GrammaticalAglutynacyjnoscRules();
-                setter = this::setGrammaticalAglutynacyjnosc;
+                setter = this::setAglutynacyjnosc;
                 break;
             case WOKALICZNOSC:
                 rule = new GrammaticalWokalicznoscRules();
-                setter = this::setGrammaticalWokalicznosc;
+                setter = this::setWokalicznosc;
                 break;
             case NEED_DOT:
                 rule = new GrammaticalNeedDotRules();
-                setter = this::setGrammaticalNeedDot;
+                setter = this::setNeedDot;
                 break;
             case PLURAL_TANTUM:
                 rule = new GrammaticalPluralTantumRules();
-                setter = this::setGrammaticalPluralTantum;
+                setter = this::setPluralTantum;
                 break;
             default:
                 return;
@@ -104,115 +104,115 @@ public class GrammaticalCategories implements GrammaticalCategoryInterprereter {
         setter.accept(result);
     }
 
-    public ArrayList<String> getGrammaticalAccent() {
-        return grammaticalAccent;
+    public ArrayList<String> getAccent() {
+        return accent;
     }
 
-    private void setGrammaticalAccent(ArrayList<String> grammaticalAccent) {
-        this.grammaticalAccent = grammaticalAccent;
+    private void setAccent(ArrayList<String> accent) {
+        this.accent = accent;
     }
 
-    public ArrayList<String> getGrammaticalAccomodative() {
-        return grammaticalAccomodative;
+    public ArrayList<String> getAccomodative() {
+        return accomodative;
     }
 
-    private void setGrammaticalAccomodative(ArrayList<String> grammaticalAccomodative) {
-        this.grammaticalAccomodative = grammaticalAccomodative;
+    private void setAccomodative(ArrayList<String> accomodative) {
+        this.accomodative = accomodative;
     }
 
-    public ArrayList<String> getGrammaticalAglutynacyjnosc() {
-        return grammaticalAglutynacyjnosc;
+    public ArrayList<String> getAglutynacyjnosc() {
+        return aglutynacyjnosc;
     }
 
-    private void setGrammaticalAglutynacyjnosc(ArrayList<String> grammaticalAglutynacyjnosc) {
-        this.grammaticalAglutynacyjnosc = grammaticalAglutynacyjnosc;
+    private void setAglutynacyjnosc(ArrayList<String> aglutynacyjnosc) {
+        this.aglutynacyjnosc = aglutynacyjnosc;
     }
 
-    public ArrayList<String> getGrammaticalAspect() {
-        return grammaticalAspect;
+    public ArrayList<String> getAspect() {
+        return aspect;
     }
 
-    void setGrammaticalAspect(ArrayList<String> grammaticalAspect) {
-        this.grammaticalAspect = grammaticalAspect;
+    void setAspect(ArrayList<String> aspect) {
+        this.aspect = aspect;
     }
 
-    public ArrayList<String> getGrammaticalCase() {
+    public ArrayList<String> getCase() {
         return grammaticalCase;
     }
 
-    void setGrammaticalCase(ArrayList<String> grammaticalCase) {
+    void setCase(ArrayList<String> grammaticalCase) {
         this.grammaticalCase = grammaticalCase;
     }
 
-    public ArrayList<String> getGrammaticalGender() {
-        return grammaticalGender;
+    public ArrayList<String> getGender() {
+        return gender;
     }
 
-    void setGrammaticalGender(ArrayList<String> grammaticalGender) {
-        this.grammaticalGender = grammaticalGender;
+    void setGender(ArrayList<String> gender) {
+        this.gender = gender;
     }
 
-    public ArrayList<String> getGrammaticalGrade() {
-        return grammaticalGrade;
+    public ArrayList<String> getGrade() {
+        return grade;
     }
 
-    private void setGrammaticalGrade(ArrayList<String> grammaticalGrade) {
-        this.grammaticalGrade = grammaticalGrade;
+    private void setGrade(ArrayList<String> grade) {
+        this.grade = grade;
     }
 
-    public ArrayList<String> getGrammaticalNeedDot() {
-        return grammaticalNeedDot;
+    public ArrayList<String> getNeedDot() {
+        return needDot;
     }
 
-    private void setGrammaticalNeedDot(ArrayList<String> grammaticalNeedDot) {
-        this.grammaticalNeedDot = grammaticalNeedDot;
+    private void setNeedDot(ArrayList<String> needDot) {
+        this.needDot = needDot;
     }
 
-    public ArrayList<String> getGrammaticalNegate() {
-        return grammaticalNegate;
+    public ArrayList<String> getNegate() {
+        return negate;
     }
 
-    private void setGrammaticalNegate(ArrayList<String> grammaticalNegate) {
-        this.grammaticalNegate = grammaticalNegate;
+    private void setNegate(ArrayList<String> negate) {
+        this.negate = negate;
     }
 
-    public ArrayList<String> getGrammaticalNumber() {
-        return grammaticalNumber;
+    public ArrayList<String> getNumber() {
+        return number;
     }
 
-    public void setGrammaticalNumber(ArrayList<String> grammaticalNumber) {
-        this.grammaticalNumber = grammaticalNumber;
+    public void setNumber(ArrayList<String> number) {
+        this.number = number;
     }
 
-    public ArrayList<String> getGrammaticalPerson() {
-        return grammaticalPerson;
+    public ArrayList<String> getPerson() {
+        return person;
     }
 
-    private void setGrammaticalPerson(ArrayList<String> grammaticalPerson) {
-        this.grammaticalPerson = grammaticalPerson;
+    private void setPerson(ArrayList<String> person) {
+        this.person = person;
     }
 
-    public ArrayList<String> getGrammaticalPluralTantum() {
-        return grammaticalPluralTantum;
+    public ArrayList<String> getPluralTantum() {
+        return pluralTantum;
     }
 
-    private void setGrammaticalPluralTantum(ArrayList<String> grammaticalPluralTantum) {
-        this.grammaticalPluralTantum = grammaticalPluralTantum;
+    private void setPluralTantum(ArrayList<String> pluralTantum) {
+        this.pluralTantum = pluralTantum;
     }
 
-    public ArrayList<String> getGrammaticalPostPrepositionality() {
-        return grammaticalPostPrepositionality;
+    public ArrayList<String> getPostPrepositionality() {
+        return postPrepositionality;
     }
 
-    private void setGrammaticalPostPrepositionality(ArrayList<String> grammaticalPostPrepositionality) {
-        this.grammaticalPostPrepositionality = grammaticalPostPrepositionality;
+    private void setPostPrepositionality(ArrayList<String> postPrepositionality) {
+        this.postPrepositionality = postPrepositionality;
     }
 
-    public ArrayList<String> getGrammaticalWokalicznosc() {
-        return grammaticalWokalicznosc;
+    public ArrayList<String> getWokalicznosc() {
+        return wokalicznosc;
     }
 
-    private void setGrammaticalWokalicznosc(ArrayList<String> grammaticalWokalicznosc) {
-        this.grammaticalWokalicznosc = grammaticalWokalicznosc;
+    private void setWokalicznosc(ArrayList<String> wokalicznosc) {
+        this.wokalicznosc = wokalicznosc;
     }
 }
