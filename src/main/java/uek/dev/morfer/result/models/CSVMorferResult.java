@@ -17,7 +17,7 @@ public class CSVMorferResult {
         this.indexB = result[MorferResultIndexes.INDEX_B.getIndex()];
         this.word = result[MorferResultIndexes.WORD.getIndex()];
         this.lemma = result[MorferResultIndexes.LEMMA.getIndex()];
-        this.interpretation = result[MorferResultIndexes.INTERPRETATION.getIndex()];
+        this.interpretation = result[MorferResultIndexes.TAGS.getIndex()];
         int additionalPropertyIndex = MorferResultIndexes.ADDITIONAL_PROPERTY.getIndex();
         this.additionalProperty = "";
 

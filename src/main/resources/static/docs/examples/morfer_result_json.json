@@ -1,50 +1,51 @@
-{
-  "interpretations": [
-    {
-      "tags": [
-        {
-          "lemma": "przykładowy",
-          "interpretation": "adj:sg:acc:m3:pos",
-          "lexemClass": {
-            "name": "przymiotnik",
-            "gramaticalNumber": [
-              "liczba pojedyncza"
-            ],
-            "gramaticalCase": [
-              "biernik"
-            ],
-            "gramaticalGender": [
-              "meski rzeczoyw"
-            ],
-            "gramaticalGrade": [
-              "rowny"
-            ]
-          }
+[
+  {
+    "segment": "Przykładowy",
+    "position": "0|1",
+    "interpretations": [
+      {
+        "lemma": "przykładowy",
+        "tag": "adj:sg:acc:m3:pos",
+        "grammaticalCategories": {
+          "grammaticalCase": [
+            "biernik"
+          ],
+          "gender": [
+            "męski rzeczowy"
+          ],
+          "grade": [
+            "równy"
+          ],
+          "number": [
+            "liczba pojedyncza"
+          ]
         },
-        {
-          "lemma": "przykładowy",
-          "interpretation": "adj:sg:nom.voc:m1.m2.m3:pos",
-          "lexemClass": {
-            "name": "przymiotnik",
-            "gramaticalNumber": [
-              "liczba pojedyncza"
-            ],
-            "gramaticalCase": [
-              "mianownik",
-              "wolacz"
-            ],
-            "gramaticalGender": [
-              "meski osobowy",
-              "meski zwierzecy",
-              "meski rzeczoyw"
-            ],
-            "gramaticalGrade": [
-              "rowny"
-            ]
-          }
-        }
-      ],
-      "text": "Przykładowy"
-    }
-  ]
-}
+        "fleksem": "przymiotnik",
+        "wordClass": "przymiotnik"
+      },
+      {
+        "lemma": "przykładowy",
+        "tag": "adj:sg:nom.voc:m1.m2.m3:pos",
+        "grammaticalCategories": {
+          "grammaticalCase": [
+            "mianownik",
+            "wołacz"
+          ],
+          "gender": [
+            "męski osobowy",
+            "męski zwierzęcy",
+            "męski rzeczowy"
+          ],
+          "grade": [
+            "równy"
+          ],
+          "number": [
+            "liczba pojedyncza"
+          ]
+        },
+        "fleksem": "przymiotnik",
+        "wordClass": "przymiotnik"
+      }
+    ]
+  }
+]

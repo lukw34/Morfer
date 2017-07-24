@@ -5,7 +5,7 @@ public enum MorferResultIndexes {
     INDEX_B(1),
     WORD(2),
     LEMMA(3),
-    INTERPRETATION(4),
+    TAGS(4),
     ADDITIONAL_PROPERTY(5);
 
     private final int index;

@@ -1,15 +1,12 @@
 package uek.dev.morfer.result.services;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import uek.dev.morfer.result.models.CSVMorferResult;
 
 import java.util.ArrayList;
 
 @Service("csvMorferService")
-@Transactional
 public class CSVMorferService implements CSVService {
-
 
     @Override
     public String getCSVData(ArrayList<String> morferResult) {

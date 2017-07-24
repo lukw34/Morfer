@@ -7,9 +7,12 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
 	}
 }
+group = 'lukv26'
 
+apply plugin: 'docker'
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'spring-boot'
@@ -28,8 +31,7 @@ repositories {
 
 dependencies {
 	compile files('libs/jmorfeusz.jar')
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-	compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile "org.mockito:mockito-core:2.+"
 }
@@ -39,7 +41,7 @@ compileJava {
 }
 
 bootRun {
-	jvmArgs = ['-Dserver.port=9001']
+	jvmArgs = []
 }
 
 test {
@@ -48,4 +50,21 @@ test {
 
 tasks.withType(JavaExec) {
 	systemProperty "java.library.path", file("./libs")
+}
+
+
+task buildDocker(type: Docker, dependsOn: build) {
+    push = true
+    applicationName = jar.baseName
+    dockerfile = file('Dockerfile')
+    doFirst {
+        copy {
+            from jar
+            into stageDir
+        }
+        copy {
+            from './libs'
+            into stageDir
+        }
+    }
 }

@@ -2,39 +2,39 @@ package uek.dev.morfer.result.services;
 
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pl.sgjp.morfeusz.ResultsIterator;
 import uek.dev.morfer.result.models.MorferResultIndexes;
-import uek.dev.morfer.result.models.json.Tag;
-import uek.dev.morfer.result.models.json.Word;
+import uek.dev.morfer.result.models.json.Interpretation;
+import uek.dev.morfer.result.models.json.Segment;
 import uek.dev.morpheus.Morpheus;
 
 import java.util.ArrayList;
 
 @Service("morferService")
-@Transactional
 public class MorferServiceImpl implements MorferService {
 
     @Override
-    public ArrayList<Word> createModel(String sample) {
-        int counter = -1;
-        ArrayList<Word> morferResult = new ArrayList<>();
-        ArrayList<Tag> actualTagsList = new ArrayList<>();
+    public ArrayList<Segment> createModel(String sample) {
+        int index = -1;
+        ArrayList<Segment> morferResult = new ArrayList<>();
+        ArrayList<Interpretation> actualInterpretationList = new ArrayList<>();
         ArrayList<String> lines = getMorferResult(sample);
 
         for (String line : lines) {
             String[] columns = line.split(" ");
-            int wordCounter = Integer.parseInt(columns[MorferResultIndexes.INDEX_A.getIndex()]);
+            int index_A = Integer.parseInt(columns[MorferResultIndexes.INDEX_A.getIndex()]);
+            String index_B = columns[MorferResultIndexes.INDEX_B.getIndex()];
 
-            if (wordCounter != counter) {
-                counter = wordCounter;
-                morferResult.add(wordCounter, new Word(columns[MorferResultIndexes.WORD.getIndex()]));
-                actualTagsList = morferResult.get(wordCounter).getTags();
+            if (index_A != index) {
+                index = index_A;
+                morferResult.add(index_A, new Segment(columns[MorferResultIndexes.WORD.getIndex()],
+                        index_A + "|" + index_B));
+                actualInterpretationList = morferResult.get(index_A).getInterpretations();
             }
 
             String lemma = columns[MorferResultIndexes.LEMMA.getIndex()];
-            String interpretation = columns[MorferResultIndexes.INTERPRETATION.getIndex()];
-            actualTagsList.add(new Tag(interpretation, lemma));
+            String interpretation = columns[MorferResultIndexes.TAGS.getIndex()];
+            actualInterpretationList.add(new Interpretation(interpretation, lemma));
         }
 
         return morferResult;

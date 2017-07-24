@@ -1,13 +1,11 @@
 package uek.dev.morfer.result.controllers;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import uek.dev.morfer.result.models.json.Result;
-import uek.dev.morfer.result.models.json.Word;
+import uek.dev.morfer.result.models.json.Segment;
 import uek.dev.morfer.result.services.CSVService;
 import uek.dev.morfer.result.services.FileService;
 import uek.dev.morfer.result.services.MorferService;
@@ -21,14 +19,30 @@ import java.util.ArrayList;
 @RequestMapping("/morfer")
 public class ResultController {
 
-    @Autowired
-    FileService fileService;
+    private final FileService fileService;
+
+    private final MorferService morferService;
+    private final CSVService csvMorferService;
 
     @Autowired
-    MorferService morferService;
+    public ResultController(FileService fileService, MorferService morferService, CSVService csvMorferService) {
+        this.fileService = fileService;
+        this.morferService = morferService;
+        this.csvMorferService = csvMorferService;
+    }
 
-    @Autowired
-    CSVService csvMorferService;
+    private ResponseEntity getResponseByResultType(String resultType, String sample) throws ResultNotDefinedException {
+        switch (resultType) {
+            case "json":
+                ArrayList<Segment> interpretations = morferService.createModel(sample);
+                return new ResponseEntity<>(interpretations, HttpStatus.OK);
+            case "csv":
+                String stringResult = csvMorferService.getCSVData(morferService.getMorferResult(sample));
+                return new ResponseEntity<>(stringResult, HttpStatus.OK);
+            default:
+                throw new ResultNotDefinedException();
+        }
+    }
 
     @RequestMapping(value = "", headers = "content-type=application/json", method = RequestMethod.POST)
     public ResponseEntity<ArrayList<String>> simpleResult(@Valid @RequestBody Sample sample) {
@@ -36,22 +50,21 @@ public class ResultController {
     }
 
     @RequestMapping(value = "json", headers = "content-type=application/json", method = RequestMethod.POST)
-    public ResponseEntity<Result> jsonResult(@Valid @RequestBody Sample sample) throws SampleNotFoundException {
+    public ResponseEntity jsonResult(@RequestParam(value = "result", required = false, defaultValue = "json") String resultType,
+                                     @Valid @RequestBody Sample sample) throws SampleNotFoundException, ResultNotDefinedException {
         String stringSample = sample.getSample();
         if (stringSample == null) {
             throw new SampleNotFoundException();
         }
 
-        ArrayList<Word> interpretations = morferService.createModel(stringSample);
-        Result result = new Result(interpretations);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return this.getResponseByResultType(resultType, stringSample);
     }
 
-    @RequestMapping(value = "csv", headers = "content-type=multipart/*", method = RequestMethod.POST)
-    public ResponseEntity<String> csvResult(@RequestParam("file") MultipartFile multipartFile) {
+    @RequestMapping(value = "file", headers = "content-type=multipart/*", method = RequestMethod.POST)
+    public ResponseEntity csvResult(@RequestParam(value = "result", required = false, defaultValue = "json") String resultType,
+                                    @RequestParam("file") MultipartFile multipartFile) throws ResultNotDefinedException {
         String fileData = fileService.readFile(multipartFile);
-        String result = csvMorferService.getCSVData(morferService.getMorferResult(fileData));
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return this.getResponseByResultType(resultType, fileData);
     }
 
 }

@@ -6,25 +6,6 @@ mediaType:  application/json
 resourceTypes:
 traits:
 /morfer:
-    post:
-        description: Bezpośredni wynik działania programu morfeusz.
-        body:
-            application/json:
-                schema: !include schemas/morfer_json_post.json
-                example: !include examples/morfer_json_post.json
-        responses:
-                200:
-                    body:
-                        text/plain:
-                            type: file
-                            example: |
-                                 [
-                                   "0 1 Przykładowe przykładowy adj:pl:acc:m2.m3.f.n1.n2.p2.p3:pos ",
-                                   "0 1 Przykładowe przykładowy adj:pl:nom.voc:m2.m3.f.n1.n2.p2.p3:pos ",
-                                   "0 1 Przykładowe przykładowy adj:sg:acc:n1.n2:pos ",
-                                   "0 1 Przykładowe przykładowy adj:sg:nom.voc:n1.n2:pos ",
-                                   "1 2 . . interp "
-                                 ]
     /json: !include resources/morfer_json.raml
     /csv: !include resources/morfer_csv.raml
 /pattern/match: !include resources/pattern_match.raml
