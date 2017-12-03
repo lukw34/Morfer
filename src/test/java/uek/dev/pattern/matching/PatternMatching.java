@@ -1,6 +1,6 @@
 package uek.dev.pattern.matching;
 
-import org.junit.Before;
+
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -8,7 +8,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import uek.dev.pattern.matching.services.MorferPatternMatcher;
 import uek.dev.pattern.matching.services.PatternMatcher;
-import uek.dev.pattern.matching.services.tokenizer.Pattern;
+
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,7 +29,7 @@ public class PatternMatching {
         String pattern = "Ala  > kot:s2 > !kot:s2";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(false, result);
+        assertEquals(true, result);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class PatternMatching {
         String pattern = "Ala  > kot:s2 > kot:s2";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(true, result);
+        assertEquals(false, result);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class PatternMatching {
         String pattern = "Ala + Al + !Al ";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(false, result);
+        assertEquals(true, result);
     }
 
     @Test

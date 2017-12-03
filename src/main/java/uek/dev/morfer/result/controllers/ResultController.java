@@ -37,8 +37,11 @@ public class ResultController {
                 ArrayList<Segment> interpretations = morferService.createModel(sample);
                 return new ResponseEntity<>(interpretations, HttpStatus.OK);
             case "csv":
-                String stringResult = csvMorferService.getCSVData(morferService.getMorferResult(sample));
-                return new ResponseEntity<>(stringResult, HttpStatus.OK);
+                String csvResult = csvMorferService.getCSVData(morferService.getMorferResult(sample));
+                return new ResponseEntity<>(csvResult, HttpStatus.OK);
+            case "plain":
+                ArrayList<String> plainResult = morferService.getMorferResult(sample);
+                return new ResponseEntity<>(plainResult, HttpStatus.OK);
             default:
                 throw new ResultNotDefinedException();
         }
@@ -50,8 +53,8 @@ public class ResultController {
     }
 
     @RequestMapping(value = "json", headers = "content-type=application/json", method = RequestMethod.POST)
-    public ResponseEntity jsonResult(@RequestParam(value = "result", required = false, defaultValue = "json") String resultType,
-                                     @Valid @RequestBody Sample sample) throws SampleNotFoundException, ResultNotDefinedException {
+    public ResponseEntity jsonRequest(@RequestParam(value = "result", required = false, defaultValue = "json") String resultType,
+                                      @Valid @RequestBody Sample sample) throws SampleNotFoundException, ResultNotDefinedException {
         String stringSample = sample.getSample();
         if (stringSample == null) {
             throw new SampleNotFoundException();
@@ -61,10 +64,16 @@ public class ResultController {
     }
 
     @RequestMapping(value = "file", headers = "content-type=multipart/*", method = RequestMethod.POST)
-    public ResponseEntity csvResult(@RequestParam(value = "result", required = false, defaultValue = "json") String resultType,
-                                    @RequestParam("file") MultipartFile multipartFile) throws ResultNotDefinedException {
+    public ResponseEntity fileRequest(@RequestParam(value = "result", required = false, defaultValue = "csv") String resultType,
+                                      @RequestParam("file") MultipartFile multipartFile) throws ResultNotDefinedException {
         String fileData = fileService.readFile(multipartFile);
         return this.getResponseByResultType(resultType, fileData);
     }
 
+    @RequestMapping(value = "text", headers = "content-type=text/plain", method = RequestMethod.POST)
+    public ResponseEntity textRequest(@RequestParam(value = "result", required = false, defaultValue = "plain") String resultType,
+                                      @RequestBody String request) throws ResultNotDefinedException {
+
+        return this.getResponseByResultType(resultType, request);
+    }
 }
