@@ -1,0 +1,23 @@
+#%RAML 1.0 Resource
+post:
+    description: Przesłanie tekstu do analizy.
+    queryParameters:
+        result:
+            description: Typ zwracanego wyniku
+            type: string
+            enum:
+              - json
+              - csv
+              - plain
+            example: csv
+    body:
+        text/plain:
+            example: |
+                 Przykladowo
+    responses:
+        200:
+            body:
+                application/json:
+                    example: |
+                         [ "0 1 Przykładowo przykładowo adv:pos",
+                          "1 2 . . interp"]

@@ -1,6 +1,6 @@
 #%RAML 1.0 Resource
 post:
-    description: Wynik działania programu morfeusz w formacie JSON.
+    description: Przesłanych danych w formacie JSON.
     queryParameters:
         result:
             description: Typ zwracanego wyniku
@@ -8,6 +8,7 @@ post:
             enum:
               - json
               - csv
+              - plain
             example: json
     body:
         application/json:
