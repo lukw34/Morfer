@@ -1,0 +1,9 @@
+version: "2"
+services:
+  morfer:
+    image: lukv26/morfer_server:latest
+    command: python app.py
+    ports:
+     - "8888:8888"
+    environment:
+     - SERVER_PORT=8888

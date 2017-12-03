@@ -1,6 +1,6 @@
 #%RAML 1.0 Resource
 post:
-    description: Wynik działania programu morfeusz w formacie csv.
+    description: Przesłanie pliku tekstowego do analizy.
     queryParameters:
         result:
             description: Typ zwracanego wyniku
@@ -8,7 +8,8 @@ post:
             enum:
               - json
               - csv
-            example: json
+              - plain
+            example: csv
     body:
         multipart/form-data:
             properties:
