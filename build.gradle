@@ -57,8 +57,7 @@ task buildDocker(type: Docker, dependsOn: build) {
     push = true
     applicationName = jar.baseName
     dockerfile = file('Dockerfile')
-	tagVersion = "1.0.1"
-	tag = "lukv26/" + jar.baseName
+    tagVersion = jar.version
     doFirst {
         copy {
             from jar
