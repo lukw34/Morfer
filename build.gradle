@@ -19,7 +19,7 @@ apply plugin: 'spring-boot'
 
 jar {
 	baseName = 'morfer_server'
-	version = '0.0.1-SNAPSHOT'
+	version = '1.0.0'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -57,6 +57,7 @@ task buildDocker(type: Docker, dependsOn: build) {
     push = true
     applicationName = jar.baseName
     dockerfile = file('Dockerfile')
+    tagVersion = jar.version
     doFirst {
         copy {
             from jar

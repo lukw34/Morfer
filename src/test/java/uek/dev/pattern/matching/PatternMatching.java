@@ -29,7 +29,7 @@ public class PatternMatching {
         String pattern = "Ala  > kot:s2 > !kot:s2";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(false, result);
+        assertEquals(true, result);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class PatternMatching {
         String pattern = "Ala  > kot:s2 > kot:s2";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(true, result);
+        assertEquals(false, result);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class PatternMatching {
         String pattern = "Ala + Al + !Al ";
         String entry = "Ala ma kota.";
         boolean result = patternMatcher.match(entry, pattern);
-        assertEquals(false, result);
+        assertEquals(true, result);
     }
 
     @Test
